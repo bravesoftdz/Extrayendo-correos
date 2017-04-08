@@ -14,6 +14,7 @@ type
     Label1: TLabel;
     Memo2: TMemo;
     procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -36,30 +37,63 @@ begin
     until FindNext(sr) <> 0;
 end;
 
+//function SplitString(const S, Delimiters: string): TStringDynArray;
+
 procedure TForm3.Button1Click(Sender: TObject);
 var
-i: Integer;
+i: Int64;
 Tabla:TStrings;
+Tabla2:TStrings;
+MyString: String;
+Splitted: TArray<String>;
 begin
+//Tabla.Create;
+Tabla := TStringList.Create;
+Tabla.Clear;
+Tabla2 := TStringList.Create;
+Tabla2.Clear;
 with TFileOpenDialog.Create(nil) do
   try
-    //Options := [fdoPickFiles];
+// Options := [fdoPickFolders];
     if Execute then
-    Tabla.Create;
-Tabla := TStringList.Create;
      // ShowMessage(FileName);
-      //  GetFileNames(FileName, Files);
-     // for i:= 0 to Files.Count-1 do
+//    GetFileNames(FileName, Files);
+//  for i:= 0 to Files.Count-1 do
 Tabla.LoadFromFile(Filename);
-Memo1.Lines.LoadFromFile(Filename)  ;
-
+//Memo1.Lines.LoadFromFile(Filename)  ;
+//Memo2.Clear;
+//Memo2.Lines.BeginUpdate ;
+for i := 0 to Tabla.Count-1 do
+begin
+MyString :=  Tabla.Strings[i] ;
+  //MyString := 'word:doc,txt,docx';
+  MyString :=  Tabla.Strings[i] ;
+Splitted := MyString.Split([':']);
+Tabla2.Add(Splitted[0]) ;
+//Memo2.Lines.Add(Splitted[0]);
+//Memo2.Lines.EndUpdate;
+end;
 
   finally
     Free;
+    Tabla2.SaveToFile('Resultado.txt'+Filename );
   end;
 
 // Tabla.SaveToFile('resultado.txt' );
 //Tabla.Free;
 end;
+
+procedure TForm3.Button2Click(Sender: TObject);
+//var
+ //*
+begin
+//*for i := 0 to Tabla1.Count-1 do
+ //*        MyString :=  Tabla1.String[i]
+  //MyString := 'word:doc,txt,docx';
+ //* Splitted := MyString.Split([':']);
+//*Memo2.Lines.Add(Splitted[0]);
+
+end;
+end.
 
 end.

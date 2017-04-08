@@ -45,6 +45,7 @@ object Form3: TForm3
     Height = 25
     Caption = 'Procedimiento Split'
     TabOrder = 2
+    OnClick = Button2Click
   end
   object Memo2: TMemo
     Left = 352
