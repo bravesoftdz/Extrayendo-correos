@@ -1,3 +1,4 @@
+{Apuromafo v1.1  07/04/2017}
 unit Unit3;
 
 interface
@@ -8,13 +9,9 @@ uses
 
 type
   TForm3 = class(TForm)
-    Memo1: TMemo;
     Button1: TButton;
-    Button2: TButton;
     Label1: TLabel;
-    Memo2: TMemo;
     procedure Button1Click(Sender: TObject);
-    procedure Button2Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -37,7 +34,7 @@ begin
     until FindNext(sr) <> 0;
 end;
 
-//function SplitString(const S, Delimiters: string): TStringDynArray;
+
 
 procedure TForm3.Button1Click(Sender: TObject);
 var
@@ -66,8 +63,7 @@ Tabla.LoadFromFile(Filename);
 for i := 0 to Tabla.Count-1 do
 begin
 MyString :=  Tabla.Strings[i] ;
-  //MyString := 'word:doc,txt,docx';
-  MyString :=  Tabla.Strings[i] ;
+//MyString :=  Tabla.Strings[i] ;
 Splitted := MyString.Split([':']);
 Tabla2.Add(Splitted[0]) ;
 //Memo2.Lines.Add(Splitted[0]);
@@ -76,24 +72,10 @@ end;
 
   finally
     Free;
-    Tabla2.SaveToFile('Resultado.txt'+Filename );
+    Tabla2.SaveToFile('Resultado.txt');
+	// Tabla.SaveToFile('Resultado.txt'+ FileName);
+	Tabla.Free;
+	Tabla2.Free;
   end;
-
-// Tabla.SaveToFile('resultado.txt' );
-//Tabla.Free;
 end;
-
-procedure TForm3.Button2Click(Sender: TObject);
-//var
- //*
-begin
-//*for i := 0 to Tabla1.Count-1 do
- //*        MyString :=  Tabla1.String[i]
-  //MyString := 'word:doc,txt,docx';
- //* Splitted := MyString.Split([':']);
-//*Memo2.Lines.Add(Splitted[0]);
-
-end;
-end.
-
 end.

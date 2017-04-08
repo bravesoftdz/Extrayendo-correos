@@ -1,9 +1,11 @@
 object Form3: TForm3
   Left = 0
   Top = 0
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
   Caption = 'Form3'
-  ClientHeight = 255
-  ClientWidth = 682
+  ClientHeight = 265
+  ClientWidth = 394
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -14,46 +16,19 @@ object Form3: TForm3
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
-    Left = 40
-    Top = 155
-    Width = 31
+    Left = 56
+    Top = 83
+    Width = 90
     Height = 13
-    Caption = 'Label1'
-  end
-  object Memo1: TMemo
-    Left = 40
-    Top = 48
-    Width = 273
-    Height = 89
-    Lines.Strings = (
-      'Memo1')
-    TabOrder = 0
+    Caption = 'v1.1  07/04/20217'
   end
   object Button1: TButton
     Left = 40
-    Top = 8
-    Width = 155
+    Top = 32
+    Width = 313
     Height = 25
-    Caption = 'Importar a Memo1'
-    TabOrder = 1
+    Caption = 'Extrae la primera cadena hasta el :'
+    TabOrder = 0
     OnClick = Button1Click
-  end
-  object Button2: TButton
-    Left = 352
-    Top = 8
-    Width = 129
-    Height = 25
-    Caption = 'Procedimiento Split'
-    TabOrder = 2
-    OnClick = Button2Click
-  end
-  object Memo2: TMemo
-    Left = 352
-    Top = 48
-    Width = 273
-    Height = 89
-    Lines.Strings = (
-      'Memo2')
-    TabOrder = 3
   end
 end

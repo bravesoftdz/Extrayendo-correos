@@ -1,3 +1,5 @@
+{Apuromafo v 1.1}
+
 program Project2;
 
 uses
