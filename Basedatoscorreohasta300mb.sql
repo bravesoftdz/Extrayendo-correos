@@ -1,3 +1,0 @@
-correo@yopmail.com:aasdalkdmasldjnasdjn
-correo2@gmail.com:asdajsdnaskdnsakdnkjieoijroi
-correo3@hotmail.fr:asdlasdlakdalsdnanldnasldknasdkn

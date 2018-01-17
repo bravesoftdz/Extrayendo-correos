@@ -13,14 +13,21 @@ object Form3: TForm3
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
     Left = 56
     Top = 83
-    Width = 90
+    Width = 3
     Height = 13
-    Caption = 'v1.1  07/04/20217'
+  end
+  object Label2: TLabel
+    Left = 56
+    Top = 120
+    Width = 37
+    Height = 13
+    Caption = 'Estado:'
   end
   object Button1: TButton
     Left = 40
